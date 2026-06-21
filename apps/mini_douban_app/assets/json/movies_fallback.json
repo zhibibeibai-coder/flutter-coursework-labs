@@ -1,0 +1,74 @@
+[
+  {
+    "title": "肖申克的救赎",
+    "year": "1994",
+    "rating": 9.7,
+    "directors": ["弗兰克·德拉邦特"],
+    "genres": ["剧情", "犯罪"],
+    "coverUrl": "https://img2.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg",
+    "summary": "银行家安迪被误判入狱，在漫长岁月里保持希望并完成自我救赎。"
+  },
+  {
+    "title": "霸王别姬",
+    "year": "1993",
+    "rating": 9.6,
+    "directors": ["陈凯歌"],
+    "genres": ["剧情", "爱情"],
+    "coverUrl": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2561716440.jpg",
+    "summary": "两位京剧演员半生纠葛，映照时代变迁与个人命运。"
+  },
+  {
+    "title": "阿甘正传",
+    "year": "1994",
+    "rating": 9.5,
+    "directors": ["罗伯特·泽米吉斯"],
+    "genres": ["剧情", "爱情"],
+    "coverUrl": "https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2372307693.jpg",
+    "summary": "阿甘以单纯和坚持穿过美国现代史，收获友情、爱情与人生答案。"
+  },
+  {
+    "title": "泰坦尼克号",
+    "year": "1997",
+    "rating": 9.5,
+    "directors": ["詹姆斯·卡梅隆"],
+    "genres": ["剧情", "爱情", "灾难"],
+    "coverUrl": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p457760035.jpg",
+    "summary": "一段跨越阶层的爱情发生在即将沉没的豪华邮轮上。"
+  },
+  {
+    "title": "这个杀手不太冷",
+    "year": "1994",
+    "rating": 9.4,
+    "directors": ["吕克·贝松"],
+    "genres": ["剧情", "动作", "犯罪"],
+    "coverUrl": "https://img2.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg",
+    "summary": "孤独杀手里昂与少女玛蒂尔达相遇，彼此成为生命中的光。"
+  },
+  {
+    "title": "千与千寻",
+    "year": "2001",
+    "rating": 9.4,
+    "directors": ["宫崎骏"],
+    "genres": ["动画", "奇幻", "冒险"],
+    "coverUrl": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2557573348.jpg",
+    "summary": "千寻误入神灵世界，在寻找父母的路上学会勇气与责任。"
+  },
+  {
+    "title": "美丽人生",
+    "year": "1997",
+    "rating": 9.5,
+    "directors": ["罗伯托·贝尼尼"],
+    "genres": ["剧情", "喜剧", "爱情"],
+    "coverUrl": "https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2578474613.jpg",
+    "summary": "父亲用幽默和想象守护孩子，在苦难中留下温柔的希望。"
+  },
+  {
+    "title": "星际穿越",
+    "year": "2014",
+    "rating": 9.4,
+    "directors": ["克里斯托弗·诺兰"],
+    "genres": ["剧情", "科幻", "冒险"],
+    "coverUrl": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2614988097.jpg",
+    "summary": "宇航员穿越虫洞寻找新家园，亲情与时间成为最重要的坐标。"
+  }
+]

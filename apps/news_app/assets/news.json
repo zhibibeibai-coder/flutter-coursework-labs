@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Mobile Internet Development Coursework Published",
+    "source": "Course News",
+    "time": "2026-06-14 09:00",
+    "imageUrl": "https://picsum.photos/seed/sust-news/900/520",
+    "summary": "The final assignment asks students to implement a small news app with common mobile development features.",
+    "content": "The app demonstrates a news list, detail pages, route navigation, image display, camera or image selection, network-style submission, comments, favorites, SQLite persistence, and portrait or landscape layout adaptation."
+  },
+  {
+    "id": 2,
+    "title": "Flutter Device Debugging Flow Completed",
+    "source": "Development Notes",
+    "time": "2026-06-14 10:20",
+    "imageUrl": "https://picsum.photos/seed/flutter-phone/900/520",
+    "summary": "The project can be run on an Android emulator or physical Android device after Flutter and Android SDK setup.",
+    "content": "During development, Flutter SDK, Android SDK, and the Android Studio bundled JBR were used as the build environment. If Gradle or aapt fails because of non-ASCII paths, move the project to an ASCII-only build path and run flutter pub get again."
+  },
+  {
+    "id": 3,
+    "title": "Mock API Used for Comment Submission",
+    "source": "Technical Design",
+    "time": "2026-06-14 11:05",
+    "imageUrl": "https://picsum.photos/seed/mock-api/900/520",
+    "summary": "The comment flow uses a simulated network request, which is enough to demonstrate request handling for coursework review.",
+    "content": "News comments support text input and optional image capture. On submit, the app simulates an HTTP POST and returns a success result to show asynchronous communication and error-handling structure."
+  },
+  {
+    "id": 4,
+    "title": "SQLite Favorites Provide Local Persistence",
+    "source": "Feature Notes",
+    "time": "2026-06-14 12:30",
+    "imageUrl": "https://picsum.photos/seed/sqlite-star/900/520",
+    "summary": "Users can favorite or unfavorite news items, and the state is saved in a local SQLite database.",
+    "content": "The favorites feature creates a favorites table through sqflite and stores the news id, title, and time. When the app starts, it reads the database so both list and detail pages can display the current favorite state."
+  }
+]

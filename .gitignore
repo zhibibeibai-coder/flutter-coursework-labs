@@ -1,0 +1,31 @@
+# Flutter and Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+
+# Android and local machine state
+android/local.properties
+**/android/local.properties
+**/android/.gradle/
+**/android/app/release/
+*.jks
+*.keystore
+
+# IDE metadata
+.idea/
+.vscode/
+*.iml
+
+# Submission artifacts and private reports
+*.apk
+*.aab
+*.zip
+*.doc
+*.docx
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db

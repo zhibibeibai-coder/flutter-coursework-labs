@@ -1,0 +1,32 @@
+[
+  {
+    "studentId": "20240601",
+    "name": "Student A",
+    "phone": "10000000001",
+    "avatar": "assets/images/avatar_chen.png"
+  },
+  {
+    "studentId": "20240602",
+    "name": "Student B",
+    "phone": "10000000002",
+    "avatar": "assets/images/avatar_li.png"
+  },
+  {
+    "studentId": "20240603",
+    "name": "Student C",
+    "phone": "10000000003",
+    "avatar": "assets/images/avatar_wang.png"
+  },
+  {
+    "studentId": "20240604",
+    "name": "Student D",
+    "phone": "10000000004",
+    "avatar": "assets/images/avatar_zhao.png"
+  },
+  {
+    "studentId": "20240605",
+    "name": "Student E",
+    "phone": "10000000005",
+    "avatar": "assets/images/avatar_ye.png"
+  }
+]
