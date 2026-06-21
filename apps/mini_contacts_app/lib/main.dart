@@ -85,7 +85,9 @@ class _ContactsPageState extends State<ContactsPage> {
     final Uri telUri = Uri(scheme: 'tel', path: contact.phone);
     final bool launched = await launchUrl(telUri);
     setState(() {
-      _message = launched ? '正在拨打 ${contact.phone}' : '当前设备无法打开拨号组件';
+      _message = launched
+          ? 'Opening dialer for ${contact.phone}'
+          : 'This device cannot open the dialer.';
     });
   }
 
@@ -97,7 +99,7 @@ class _ContactsPageState extends State<ContactsPage> {
     );
     if (image == null) {
       setState(() {
-        _message = '未拍摄新的头像';
+        _message = 'No new avatar was captured.';
       });
       return;
     }
@@ -112,7 +114,7 @@ class _ContactsPageState extends State<ContactsPage> {
         title: const Text('MiniContacts'),
         actions: <Widget>[
           IconButton(
-            tooltip: '刷新',
+            tooltip: 'Refresh',
             onPressed: _loadContacts,
             icon: const Icon(Icons.refresh),
           ),
@@ -121,7 +123,7 @@ class _ContactsPageState extends State<ContactsPage> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _addContact,
         icon: const Icon(Icons.person_add_alt),
-        label: const Text('添加'),
+        label: const Text('Add'),
       ),
       body: SafeArea(
         child: Center(
@@ -184,7 +186,7 @@ class ContactTile extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         child: Row(
           children: <Widget>[
-            AvatarImage(path: contact.avatar),
+            AvatarImage(path: contact.avatar, label: contact.name),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -216,19 +218,19 @@ class ContactTile extends StatelessWidget {
               spacing: 2,
               children: <Widget>[
                 IconButton(
-                  tooltip: '拨打电话',
+                  tooltip: 'Call',
                   onPressed: onCall,
                   icon: const Icon(Icons.call),
                   visualDensity: VisualDensity.compact,
                 ),
                 IconButton(
-                  tooltip: '更换头像',
+                  tooltip: 'Change avatar',
                   onPressed: onChangeAvatar,
                   icon: const Icon(Icons.photo_camera),
                   visualDensity: VisualDensity.compact,
                 ),
                 IconButton(
-                  tooltip: '删除',
+                  tooltip: 'Delete',
                   onPressed: onDelete,
                   icon: const Icon(Icons.delete_outline),
                   visualDensity: VisualDensity.compact,
@@ -243,16 +245,27 @@ class ContactTile extends StatelessWidget {
 }
 
 class AvatarImage extends StatelessWidget {
-  const AvatarImage({super.key, required this.path});
+  const AvatarImage({
+    super.key,
+    required this.path,
+    required this.label,
+  });
 
   final String path;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
-    final ImageProvider provider = path.startsWith('assets/')
-        ? AssetImage(path)
-        : FileImage(File(path));
-    return CircleAvatar(radius: 28, backgroundImage: provider);
+    if (path.isNotEmpty) {
+      final File file = File(path);
+      if (file.existsSync()) {
+        return CircleAvatar(radius: 28, backgroundImage: FileImage(file));
+      }
+    }
+    final String initial = label.trim().isEmpty
+        ? '?'
+        : label.trim().characters.first.toUpperCase();
+    return CircleAvatar(radius: 28, child: Text(initial));
   }
 }
 
@@ -280,7 +293,7 @@ class _ContactEditorDialogState extends State<ContactEditorDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('添加联系人'),
+      title: const Text('Add contact'),
       content: Form(
         key: _formKey,
         child: SizedBox(
@@ -290,17 +303,17 @@ class _ContactEditorDialogState extends State<ContactEditorDialog> {
             children: <Widget>[
               TextFormField(
                 controller: _studentIdController,
-                decoration: const InputDecoration(labelText: '学号'),
+                decoration: const InputDecoration(labelText: 'Student ID'),
                 validator: _notEmpty,
               ),
               TextFormField(
                 controller: _nameController,
-                decoration: const InputDecoration(labelText: '姓名'),
+                decoration: const InputDecoration(labelText: 'Name'),
                 validator: _notEmpty,
               ),
               TextFormField(
                 controller: _phoneController,
-                decoration: const InputDecoration(labelText: '电话'),
+                decoration: const InputDecoration(labelText: 'Phone'),
                 keyboardType: TextInputType.phone,
                 validator: _notEmpty,
               ),
@@ -311,15 +324,15 @@ class _ContactEditorDialogState extends State<ContactEditorDialog> {
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),
         ),
-        FilledButton(onPressed: _submit, child: const Text('保存')),
+        FilledButton(onPressed: _submit, child: const Text('Save')),
       ],
     );
   }
 
   String? _notEmpty(String? value) {
-    return value == null || value.trim().isEmpty ? '不能为空' : null;
+    return value == null || value.trim().isEmpty ? 'Required' : null;
   }
 
   void _submit() {
@@ -331,7 +344,7 @@ class _ContactEditorDialogState extends State<ContactEditorDialog> {
         studentId: _studentIdController.text.trim(),
         name: _nameController.text.trim(),
         phone: _phoneController.text.trim(),
-        avatar: 'assets/images/avatar_ye.png',
+        avatar: '',
       ),
     );
   }
